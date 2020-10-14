@@ -1,9 +1,7 @@
 package fr.episen.ing3.progmobile_api.dto;
 
-import java.util.logging.Level;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Set;
 
 import org.springframework.lang.NonNull;
@@ -17,7 +15,6 @@ import lombok.Data;
 @Builder
 public class Student {
 
-	@NonNull
     private Integer id;
 	@NonNull
     private String name;

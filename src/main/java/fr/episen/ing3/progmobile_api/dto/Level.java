@@ -1,13 +1,9 @@
 package fr.episen.ing3.progmobile_api.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public enum Level {
-	@JsonProperty("ING1")
+	
     ING1,
-    @JsonProperty("ING2")
     ING2,
-    @JsonProperty("ING3")
     ING3;
 
     public static int toPosition(Level level) {
