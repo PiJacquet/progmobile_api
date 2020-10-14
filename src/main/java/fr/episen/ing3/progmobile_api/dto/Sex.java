@@ -1,7 +1,12 @@
 package fr.episen.ing3.progmobile_api.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public enum Sex {
-    Male,Female;
+	@JsonProperty("Male")
+    Male,
+    @JsonProperty("Female")
+    Female;
 
     public static int toValue(Sex sex) {
         switch (sex){
