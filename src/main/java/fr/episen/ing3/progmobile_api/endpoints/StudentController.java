@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.episen.ing3.progmobile_api.ProgmobileApiApplication;
 import fr.episen.ing3.progmobile_api.dto.Student;
 import fr.episen.ing3.progmobile_api.service.StudentService;
 import lombok.extern.slf4j.Slf4j;
@@ -32,6 +33,7 @@ public class StudentController {
 	public ResponseEntity<Student> createStudent(@RequestBody Student student) {
 		log.info("create " + student.toString());
 		Student newStudent = studentService.createStudent(student);
+		System.out.println(ProgmobileApiApplication.studentsRepo);
 		return ResponseEntity.ok(newStudent);
 	}
 	
@@ -66,6 +68,7 @@ public class StudentController {
 	/* Retourne tous les étudiants */
 	public ResponseEntity<List<Student>> getStudents(){
 		log.info("getAll");
+		System.out.println(ProgmobileApiApplication.studentsRepo);
 		List<Student> getStudents = studentService.getStudents();
 		return ResponseEntity.ok(getStudents);
 	}
