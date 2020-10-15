@@ -12,7 +12,7 @@ import fr.episen.ing3.progmobile_api.dto.Student;
 public class StudentService {
 
 	public Student createStudent(Student student) {
-		student.registerToContext(ProgmobileApiApplication.studentsRepo);
+		student.registerToContext();
 		return student;
 	}
 	

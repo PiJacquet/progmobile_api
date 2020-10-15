@@ -1,11 +1,8 @@
 package fr.episen.ing3.progmobile_api.dto;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Set;
-
 import org.springframework.lang.NonNull;
 
+import fr.episen.ing3.progmobile_api.ProgmobileApiApplication;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -31,19 +28,13 @@ public class Student {
 	@NonNull
     private Level level;
 	
-    public void registerToContext(HashMap<Integer,Student> context) {
-    	Set<Integer> keys = context.keySet();
-    	if(keys.isEmpty())
-    		registerToContext(context,0);   
-    	else {
-    		ArrayList<Integer> keysList = new ArrayList<Integer>(keys);
-    		registerToContext(context,keysList.get(keysList.size()-1)+1);
-    	}
+    public void registerToContext() {
+    	registerToContext(ProgmobileApiApplication.index++);
     }
 
-    public void registerToContext(HashMap<Integer,Student> context, Integer id){
+    public void registerToContext(Integer id){
         this.id= id;
-        context.put(id,this);
+        ProgmobileApiApplication.studentsRepo.put(id,this);
     }
 
 }
