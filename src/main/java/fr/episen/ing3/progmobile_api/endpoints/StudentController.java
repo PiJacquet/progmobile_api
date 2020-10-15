@@ -33,7 +33,6 @@ public class StudentController {
 	public ResponseEntity<Student> createStudent(@RequestBody Student student) {
 		log.info("create " + student.toString());
 		Student newStudent = studentService.createStudent(student);
-		System.out.println(ProgmobileApiApplication.studentsRepo);
 		return ResponseEntity.ok(newStudent);
 	}
 	
@@ -68,7 +67,6 @@ public class StudentController {
 	/* Retourne tous les étudiants */
 	public ResponseEntity<List<Student>> getStudents(){
 		log.info("getAll");
-		System.out.println(ProgmobileApiApplication.studentsRepo);
 		List<Student> getStudents = studentService.getStudents();
 		return ResponseEntity.ok(getStudents);
 	}
